@@ -1,0 +1,214 @@
+.lifestylesHeader {
+  padding: 0 4rem;
+
+  .header {
+    text-align: left;
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 1rem;
+      padding: 0;
+      margin: 0;
+      font-weight: 600;
+      color: #707070;
+    }
+
+    p {
+      font-size: 1.8rem;
+      color: #707070;
+      margin: 0.6rem 0;
+
+      span {
+        font-weight: bold;
+        font-style: italic;
+        background: linear-gradient(to right, #f0c971, #e5688c);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    }
+
+    .navigation {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      display: flex;
+      gap: 1rem;
+
+      .navButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background-color: #fff;
+        border: 1px solid #e7e7e7;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #f8f9fa;
+        }
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .tabsSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        border: 1px solid #e7e7e7;
+        border-radius: 18px;
+        background-color: #fff;
+        color: #707070;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #f8f9fa;
+        }
+
+        &.activeTab {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .cardsContainer {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 0 2rem 0;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      min-width: 450px;
+      cursor: pointer;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .cardImage {
+        position: relative;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: auto;
+        }
+
+        .badge {
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+          display: flex;
+          align-items: center;
+          background: #f8f9fa;
+          padding: 0.4rem 0.8rem;
+          border-radius: 18px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: #707070;
+          gap: 0.4rem;
+
+          .badgebold {
+            color: black;
+          }
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+
+      .cardContent {
+        padding: 0.5rem 1.5rem;
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #000;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: #707070;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    margin-top: -5%;
+
+    .tabsSection {
+      display: none;
+    }
+
+    .header {
+      .navigation {
+        display: none;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      p {
+        text-align: center;
+        font-size: 1.3rem;
+      }
+    }
+
+    .cardsContainer {
+      gap: 2.5rem;
+      padding: 1rem 0 2rem 1rem;
+
+      .card {
+        min-width: 300px;
+        transition: transform 0.3s ease;
+
+        &:nth-child(1) {
+          transform: scale(1.05);
+        }
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

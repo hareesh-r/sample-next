@@ -1,0 +1,275 @@
+.landing {
+  /* Main container for the landing page */
+  position: relative;
+  height: 100vh;
+  background-color: #ffffff;
+
+  .container {
+    /* Grid layout for the main content */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 2rem;
+    align-items: center;
+    position: relative;
+    height: 85%;
+  }
+
+  .imageColumns {
+    /* Section for the animated image columns */
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+
+    .column {
+      /* Each image column */
+      overflow: hidden;
+      width: 300px;
+      height: 84vh;
+
+      .loop {
+        /* Animated loop of images */
+        display: flex;
+        flex-direction: column;
+        animation: scrollDown 20s linear infinite;
+
+        &.reverse {
+          animation: scrollUp 20s linear infinite;
+        }
+
+        img {
+          /* Styling for images */
+          width: 300px;
+          height: 420px;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+          object-fit: cover;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+
+  /* Scroll animation for upward direction */
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  /* Scroll animation for downward direction */
+  @keyframes scrollDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  .text {
+    /* Styling for the main heading and subtitle */
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      margin-top: -5rem;
+
+      span {
+        /* Gradient text for emphasis */
+        background: linear-gradient(to right, #1173b3, #0cb9b3);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #707070;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .searchBar {
+    /* Search bar container */
+    position: absolute;
+    bottom: 22%;
+    left: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 78%;
+    background: white;
+    padding: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    .searchField {
+      /* Input fields inside the search bar */
+      display: flex;
+      align-items: center;
+      background: #f8f9fa;
+      border: 1px solid #e7e7e7;
+      padding: 1rem;
+      border-radius: 6px;
+      flex: 1;
+      margin-right: 1rem;
+
+      input {
+        border: none;
+        background: none;
+        outline: none;
+        padding-left: 0.5rem;
+        flex: 1;
+        font-size: 1rem;
+        color: #707070;
+      }
+    }
+
+    .searchButton {
+      /* Search button */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to right, #4683d0, #7cd0a2);
+      color: white;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .bottomLine {
+    /* Gradient bottom line */
+    position: absolute;
+    left: 0;
+    padding: 0;
+    height: 32px;
+    width: 100%;
+    background: linear-gradient(to right, #f0c971, #e5688c);
+    transform: skewY(-3deg);
+    transform-origin: bottom left;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing {
+    .container {
+      /* Single column layout for mobile view */
+      grid-template-columns: 1fr;
+      padding: 0 1rem;
+    }
+
+    .imageColumns {
+      /* Hide image columns on mobile */
+      display: none;
+    }
+
+    .text {
+      /* Adjust heading and subtitle for mobile */
+      h1 {
+        font-size: 2.1rem;
+        margin-top: 0;
+        font-weight: 600;
+        position: absolute;
+        top: 5%;
+        padding-left: 0.6rem;
+        padding-right: 0.5rem;
+      }
+
+      p {
+        line-height: 1.8;
+        font-size: 1.05rem;
+        position: absolute;
+        top: 22%;
+        padding-left: 0.6rem;
+        padding-right: 0.5rem;
+      }
+    }
+
+    .searchBar {
+      /* Adjust search bar layout for mobile */
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 36%;
+      left: 3.5%;
+      width: 84%;
+      align-items: stretch;
+      background: white;
+      border-radius: 15px;
+      padding: 1.1rem;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+
+      .searchField {
+        margin: 0.5rem;
+      }
+
+      .searchButton {
+        margin: 0.5rem;
+      }
+    }
+
+    .bottomLine {
+      /* Adjust bottom line position for mobile */
+      top: 50%;
+      z-index: 1;
+    }
+
+    .extraImages {
+      /* Display additional images on mobile */
+      display: flex;
+      overflow: hidden;
+      position: absolute;
+      top: 80%;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+
+      .imageWrapper {
+        display: flex;
+        animation: scrollRightToLeft 10s linear infinite;
+
+        img {
+          width: 140px;
+          height: 200px;
+          margin: 0.5rem;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+    }
+
+    /* Animation for scrolling images */
+    @keyframes scrollRightToLeft {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .extraImages {
+    /* Hide extra images on desktop */
+    display: none;
+  }
+}

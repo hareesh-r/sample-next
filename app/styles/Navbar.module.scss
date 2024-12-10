@@ -1,0 +1,237 @@
+.navbar {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #eaeaea;
+  padding: 1rem 4rem;
+  position: relative;
+  z-index: 1000;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Logo Section */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    span {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+  }
+
+  /* Hamburger Menu for Mobile */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .hamburgerIcon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  /* Desktop Navigation Links */
+  .navLinks {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    a,
+    span {
+      text-decoration: none;
+      font-size: 0.875rem;
+      color: #707070;
+      font-weight: 500;
+    }
+
+    .separator {
+      margin: 0 0.5rem;
+      color: #e0e0e0;
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+
+      .dropdownTrigger {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+
+        .dropdownIcon {
+          width: 12px;
+          height: 12px;
+          color: #707070;
+        }
+      }
+
+      .dropdownContent {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: -85%;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 10;
+        border-radius: 10px;
+        width: 200px;
+
+        .dropdownRow {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 0.75rem;
+
+          span {
+            font-weight: bold;
+          }
+
+          div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            a {
+              color: #0077cc;
+              font-size: 0.875rem;
+              text-decoration: none;
+            }
+
+            span {
+              color: #707070;
+              font-size: 0.875rem;
+            }
+          }
+        }
+
+        hr {
+          border: none;
+          border-top: 1px solid #eaeaea;
+          margin: 0.5rem 0;
+        }
+      }
+    }
+  }
+
+  /* Mobile Sidebar Menu */
+  .navLinksMobile {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #eaeaea;
+    gap: 1rem;
+    padding-top: 1.5rem;
+
+    hr {
+      border-top: 1px solid #eaeaea;
+      margin: 0.5rem 0;
+    }
+
+    .rightArrowIcon {
+      color: #707070;
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem 0 1.2rem;
+      text-decoration: none;
+      color: #000000;
+    }
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 90%;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 1000;
+
+    .dropdownContent {
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #eaeaea;
+    }
+
+    .dropdownRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+
+      span {
+        font-weight: bold;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        a {
+          color: #0077cc;
+          font-size: 0.875rem;
+          text-decoration: none;
+        }
+
+        span {
+          color: #707070;
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #eaeaea;
+      margin: 0.5rem 0;
+    }
+  }
+
+  /* Responsive Styles for Mobile View */
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+
+    .hamburger {
+      display: block;
+    }
+
+    .navLinks {
+      display: none;
+    }
+
+    .navLinksMobile {
+      height: 75vh;
+      display: flex;
+      background-color: #ffffff;
+    }
+  }
+}
